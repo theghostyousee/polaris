@@ -108,6 +108,10 @@ main {
   font-size: 14px;
   cursor: pointer;
 }
+
+button:hover{
+  background-color: rgba(250, 235, 215, 0.178);
+}
 .landing span {
   --tw-text-opacity: 1;
   color: rgb(235 208 151 / var(--tw-text-opacity));

@@ -6,6 +6,11 @@ import Athena from "./Media/athena.png";
 import Pattern from "./Media/bg_pattern.png";
 
 function Landing() {
+
+  function openTwitter() {
+    window.open("https://twitter.com/intent/tweet?text=This%20is%20my%20proof%20of%20participation%20for%20%40PaddasFinance%0D%0A%0D%0AThe%20first%20AutoStaking%20protocol%20on%20%23zkSync%F0%9F%94%B1");
+  }
+  
   return (
     <div className="wrap">
       <header>
@@ -22,8 +27,8 @@ function Landing() {
       <main>
         <div className="landing">
           <h1>The frontier of <span>Auto-Staking</span> <br/> on Zksync Era </h1>
-          <h4>Hold & rebase fixed POLARIS rewards</h4>
-          <button>PARTICIPATE</button>
+          <h4>Hold & rebase fixed PADDAS rewards</h4>
+          <button onClick={openTwitter}>PARTICIPATE</button>
         </div>
         <div className="hidden">
           <img src={Athena}></img>
