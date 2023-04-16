@@ -11,6 +11,10 @@ function Header() {
   const [connected, setConnected] = useState(false);
   const [shortAddress, setShortAddress] = useState("");
 
+  function openDiscord() {
+    window.open("https://discord.gg/paddasfinance");
+  }
+
   const connectMetaMask = async () => {
     if (typeof window.ethereum !== "undefined") {
       try {
@@ -51,7 +55,7 @@ function Header() {
         <img onClick={handleClick} src={Logo}></img>
 
         <div className="social-header">
-          <img src={Discord}></img>
+          <img onClick={openDiscord} src={Discord}></img>
           <button onClick={connectMetaMask}>
             {connected ? shortAddress : "Connect Wallet"}
           </button>
