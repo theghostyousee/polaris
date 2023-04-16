@@ -5,15 +5,10 @@ import Dollars from "../../Media/dollars.svg";
 import Pourcentage from "../../Media/percentage.svg";
 import Wallet from "../../Media/wallet.svg";
 import Panel from "../../Media/panel.svg";
-import { useNavigate, Route } from 'react-router-dom';
+
 
 function Dashboard() {
-  const navigate = useNavigate();
 
-
-  const handleClick = () => {
-    navigate('/');
-  };
   return (
     <div className='dashboard-wrap'>
       <div className='top-dashboard'>
