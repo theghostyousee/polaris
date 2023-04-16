@@ -59,6 +59,9 @@ header {
   gap: 1vmin;
 }
 
+.social-header img{
+  cursor: pointer;
+}
 .wrap {
   position: relative;
   height: 100vh;

@@ -4,6 +4,7 @@ import Discord from "./Media/discord.svg";
 import App from "./Media/app.svg";
 import Athena from "./Media/athena.png";
 import Pattern from "./Media/bg_pattern.png";
+import { useNavigate, Route } from 'react-router-dom';
 
 function Landing() {
 
@@ -11,6 +12,17 @@ function Landing() {
     window.open("https://twitter.com/intent/tweet?text=This%20is%20my%20proof%20of%20participation%20for%20%40PaddasFinance%0D%0A%0D%0AThe%20first%20AutoStaking%20protocol%20on%20%23zkSync%F0%9F%94%B1");
   }
   
+  function openDiscord() {
+    window.open("https://discord.gg/paddasfinance");
+  }
+
+  const navigate = useNavigate();
+
+
+  const handleClick = () => {
+    navigate('/app');
+  };
+
   return (
     <div className="wrap">
       <header>
@@ -18,8 +30,8 @@ function Landing() {
           <img src={Logo}></img>
 
           <div className="social-header">
-            <img src={Discord}></img>
-            <img src={App}></img>
+            <img onClick={openDiscord} src={Discord}></img>
+            <img src={App} onClick={handleClick}></img>
           </div>
         </div>
       </header>
