@@ -420,7 +420,7 @@ input:focus {
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 392px) {
   .top-dashboard {
     width: 80%;
     height: 18%;
