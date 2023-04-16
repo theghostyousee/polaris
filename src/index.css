@@ -107,7 +107,9 @@ main {
   border: 1px solid rgba(120, 125, 13, 0.386);
   padding: 10px 20px;
   font-family: "Nexa-Bold";
+  border-radius: 16px;
   font-weight: 400;
+
   font-size: 14px;
   cursor: pointer;
 }
