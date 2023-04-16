@@ -52,6 +52,36 @@ function Dashboard() {
         </div>
 
       </div>
+
+      <div className='presale-banner'>
+        <div className='presale-card'>
+          <div className='presale-top'>
+            <h2>Paddas Sale</h2>
+          </div>
+          <div className='input-buy'>
+            <input type={'number'} placeholder='Amount of $ETH'></input>
+          </div>
+          <div className='info-presale'>
+            <div className='presale-row'>
+              <p>PADDAS Received</p>
+              <p>0</p>
+            </div>
+            <div className='presale-row'>
+              <p>Discount Price</p>
+              <p>-10%</p>
+            </div>
+            <div className='presale-row'>
+              <p>Max Wallet</p>
+              <p>0</p>
+            </div>
+          </div>
+          <div className='button-presale'>
+            <button>Buy Discounted $PADDAS</button>
+          </div>
+
+        </div>
+      </div>
+      
       <div className='wallet-info'>
         <div className='top-wallet'>
           <img src={Wallet}></img>
