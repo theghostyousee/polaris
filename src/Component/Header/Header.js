@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
-import Logo from "../../Media/polaris.svg";
+import Logo from "../../Media/logs.svg";
 import Discord from "../../Media/discord.svg";
 import App from "../../Media/app.svg";
 import Athena from "../../Media/athena.png";
