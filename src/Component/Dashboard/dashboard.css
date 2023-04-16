@@ -32,7 +32,7 @@
 }
 .welcome h1 {
   --tw-text-opacity: 1;
-  font-size: max(calc(20 * var(--res)), 22px);
+  font-size: max(calc(20 * var(--res)), 20px);
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
