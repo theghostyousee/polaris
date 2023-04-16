@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useState }  from "react";
 import './dashboard.css'
 import Coin from "../../Media/coin.svg";
 import Dollars from "../../Media/dollars.svg";
 import Pourcentage from "../../Media/percentage.svg";
 import Wallet from "../../Media/wallet.svg";
 import Panel from "../../Media/panel.svg";
-
+import Web3 from "web3";
 
 function Dashboard() {
+
 
   return (
     <div className='dashboard-wrap'>
