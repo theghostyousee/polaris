@@ -104,7 +104,6 @@ button:hover {
     display: flex;
     width: 92%;
     height: 100%;
-    background-color: rebeccapurple;
     justify-content: space-between;
   }
 }
