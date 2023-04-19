@@ -12,9 +12,7 @@ function Dashboard() {
   const [amount, setAmount] = useState("");
   const [connected, setConnected] = useState(false);
   const [balance, setBalance] = useState(0);
-  const [stackValue, setStackValue] = useState("");
-
-  const ETH_TO_STACK_RATIO = 23668.122;
+  const [paddasReceived, setPaddasReceived] = useState(0);
 
   const connectMetaMask = async () => {
     if (typeof window.ethereum !== "undefined") {
@@ -70,10 +68,12 @@ function Dashboard() {
   };
 
   const handleAmountChange = (event) => {
-    const value = event.target.value;
-    setAmount(value);
-    setStackValue(value * ETH_TO_STACK_RATIO);
+    const inputValue = event.target.value;
+    const paddasReceived = Math.floor(inputValue / 0.000227);
+    setAmount(inputValue);
+    setPaddasReceived(paddasReceived);
   };
+  
 
   useEffect(() => {
     handleMaxClick();
@@ -137,7 +137,7 @@ function Dashboard() {
           <div className="info-presale">
             <div className="presale-row">
               <p>PADDAS Received</p>
-              <p>0</p>
+              <p>{paddasReceived}</p>
             </div>
             <div className="presale-row">
               <p>Discount Price</p>
