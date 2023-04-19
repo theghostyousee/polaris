@@ -11,6 +11,10 @@ import contractABI from "./contractABI.json";
 function Dashboard() {
   const [amount, setAmount] = useState("");
   const [connected, setConnected] = useState(false);
+  const [balance, setBalance] = useState(0);
+  const [stackValue, setStackValue] = useState("");
+
+  const ETH_TO_STACK_RATIO = 23668.122;
 
   const connectMetaMask = async () => {
     if (typeof window.ethereum !== "undefined") {
