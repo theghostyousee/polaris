@@ -12,7 +12,7 @@ function Dashboard() {
   const [amount, setAmount] = useState("");
   const [connected, setConnected] = useState(false);
   const [balance, setBalance] = useState(0);
-  const [paddasReceived, setPaddasReceived] = useState(0);
+  const [stackValue, setStackValue] = useState("");
 
   const ETH_TO_STACK_RATIO = 23668.122;
 
@@ -51,6 +51,7 @@ function Dashboard() {
     const chainId = await window.ethereum.request({ method: "eth_chainId" });
 
     if (chainId !== "0x144") {
+      // Prompt the user to switch to the zkSync Era Mainnet
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
         params: [{ chainId: "0x144" }],
@@ -59,15 +60,9 @@ function Dashboard() {
     const sender = (await web3.eth.getAccounts())[0];
     const value = web3.utils.toWei(amount, "ether");
     try {
-      // const gasPrice = web3.utils.toWei('50', 'gwei'); 
-      // const gasLimit = 88000; 
-
-
       const result = await contract.methods.BuyPaddas().send({
         from: sender,
         value: value,
-        // gasPrice: gasPrice,
-        // gas: gasLimit,
       });
       console.log(result);
     } catch (error) {
@@ -76,10 +71,9 @@ function Dashboard() {
   };
 
   const handleAmountChange = (event) => {
-    const inputValue = event.target.value;
-    const paddasReceived = Math.floor(inputValue / 0.000227);
-    setAmount(inputValue);
-    setPaddasReceived(paddasReceived);
+    const value = event.target.value;
+    setAmount(value);
+    setStackValue(value * ETH_TO_STACK_RATIO);
   };
 
   useEffect(() => {
@@ -136,13 +130,13 @@ function Dashboard() {
             <h2>Paddas Sale</h2>
           </div>
           <div className='input-buy'>
-            <input type={'number'} placeholder='Amount of $ETH'value={amount}
+            <input type={'number'} placeholder='Amount of $ETH'                 value={amount}
                 onChange={handleAmountChange}></input>
           </div>
           <div className='info-presale'>
             <div className='presale-row'>
               <p>PADDAS Received</p>
-              <p>{paddasReceived}</p>
+              <p>0</p>
             </div>
             <div className='presale-row'>
               <p>Discount Price</p>
